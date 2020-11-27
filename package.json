@@ -1,0 +1,35 @@
+{
+	"name": "clipboard-parser",
+	"description": "剪贴板内容解析器",
+	"version": "1.0.1",
+	"scripts": {
+		"eslint": "eslint --fix --ext .vue,.js",
+		"prettier": "npx prettier --write bin"
+	},
+	"main": "index.js",
+	"dependencies": {},
+	"devDependencies": {
+		"babel-eslint": "^10.1.0",
+		"eslint": "7.8.1",
+		"eslint-plugin-prettier": "3.1.4",
+		"prettier": "2.1.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/saqqdy/clipboard-parser.git"
+	},
+	"keywords": [
+		"clipboard-parser",
+		"clipboard",
+		"parser",
+		"clipboardData",
+		"剪贴板",
+		"解析器"
+	],
+	"author": "saqqdy.com",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/saqqdy/clipboard-parser/issues"
+	},
+	"homepage": "https://github.com/saqqdy/clipboard-parser#readme"
+}
