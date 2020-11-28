@@ -43,11 +43,8 @@ export default function (clipdata, readRequestParam = true) {
 				param2 = {}
 			if (b.indexOf('=') === -1 && b.indexOf(',') === -1) {
 				param1 = { value: b.replace(/^"([\s\S]*)"$/, '$1') }
-			} else if (c.indexOf('=') === -1 && c.indexOf(',') === -1) {
-				param2 = { value: c.replace(/^"([\s\S]*)"$/, '$1') }
 			} else {
-				let p1 = b.replace(/\s+/g, '').split(','),
-					p2 = c.replace(/\s+/g, '').split(',')
+				let p1 = b.replace(/\s+/g, '').split(',')
 				p1 = p1.map(param => {
 					let m = param.split('=')
 					if (/^"[\s\S]*"$/.test(m[1])) m[1] = m[1].replace(/^"([\s\S]*)"$/, '$1')
@@ -56,6 +53,12 @@ export default function (clipdata, readRequestParam = true) {
 					else m[1] = +m[1]
 					return m
 				})
+				param1 = Object.fromEntries(p1)
+			}
+			if (c.indexOf('=') === -1 && c.indexOf(',') === -1) {
+				param2 = { value: c.replace(/^"([\s\S]*)"$/, '$1') }
+			} else {
+				let p2 = c.replace(/\s+/g, '').split(',')
 				p2 = p2.map(param => {
 					let m = param.split('=')
 					if (/^"[\s\S]*"$/.test(m[1])) m[1] = m[1].replace(/^"([\s\S]*)"$/, '$1')
@@ -64,7 +67,6 @@ export default function (clipdata, readRequestParam = true) {
 					else m[1] = +m[1]
 					return m
 				})
-				param1 = Object.fromEntries(p1)
 				param2 = Object.fromEntries(p2)
 			}
 			requestParams.push({
