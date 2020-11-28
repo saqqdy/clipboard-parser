@@ -1,4 +1,15 @@
-module.exports = function (clipdata, readRequestParam = true) {
+const dataTypaMap = {
+	String: 'String',
+	Int: 'Number',
+	Double: 'Number',
+	Long: 'Number',
+	Boolean: 'Boolean',
+	Object: 'Object',
+	Array: 'Array',
+	Float: 'Number'
+}
+
+export default function (clipdata, readRequestParam = true) {
 	let //clipdata = window.clipboardData || e.clipboardData,
 		text = clipdata
 			.getData('Text')
@@ -14,23 +25,30 @@ module.exports = function (clipdata, readRequestParam = true) {
 		let arr = txt ? txt.split('\t') : []
 		if (i === 0) {
 			len = +arr.length
-		} else if (len !== arr.length || len === 0) {
+		} else if (len === 0 || (i !== rows.length - 1 && len !== arr.length)) {
+			// 最后一行不校验
 			notTableData = true
 		}
-		arr = arr.map(el => el.replace(/\s+/g, ''))
+		arr = arr.map(el => el.replace(/\s+/g, ' '))
 		return arr
 	})
+	console.log(rows)
 	if (notTableData) {
 		rows = rows.map(txt => txt.join('')).join('')
 	}
 	if (readRequestParam && isRequestParam) {
-		rows.replace(/@RequestParam\(([\w="",-]+)\)/g, (a, b) => {
-			let param = {}
+		// @RequestParam\(([\w="",-]+)\)
+		rows.replace(/@RequestParam\(([\w="",\- \u4e00-\u9fa5]+)\)[\n\r\t ]*@ApiParam\(([\w="",\- \u4e00-\u9fa5]+)\)[\n\r\t ]*([\w]+)/g, (a, b, c, d) => {
+			let param1 = {},
+				param2 = {}
 			if (b.indexOf('=') === -1 && b.indexOf(',') === -1) {
-				param = { value: b.replace(/^"([\s\S]*)"$/, '$1') }
+				param1 = { value: b.replace(/^"([\s\S]*)"$/, '$1') }
+			} else if (c.indexOf('=') === -1 && c.indexOf(',') === -1) {
+				param2 = { value: c.replace(/^"([\s\S]*)"$/, '$1') }
 			} else {
-				let p = b.split(',')
-				p = p.map(param => {
+				let p1 = b.replace(/\s+/g, '').split(','),
+					p2 = c.replace(/\s+/g, '').split(',')
+				p1 = p1.map(param => {
 					let m = param.split('=')
 					if (/^"[\s\S]*"$/.test(m[1])) m[1] = m[1].replace(/^"([\s\S]*)"$/, '$1')
 					else if (m[1] === 'true') m[1] = true
@@ -38,11 +56,23 @@ module.exports = function (clipdata, readRequestParam = true) {
 					else m[1] = +m[1]
 					return m
 				})
-				param = Object.fromEntries(p)
+				p2 = p2.map(param => {
+					let m = param.split('=')
+					if (/^"[\s\S]*"$/.test(m[1])) m[1] = m[1].replace(/^"([\s\S]*)"$/, '$1')
+					else if (m[1] === 'true') m[1] = true
+					else if (m[1] === 'false') m[1] = false
+					else m[1] = +m[1]
+					return m
+				})
+				param1 = Object.fromEntries(p1)
+				param2 = Object.fromEntries(p2)
 			}
 			requestParams.push({
 				required: true,
-				...param
+				type: dataTypaMap[d] || 'String',
+				...param1,
+				defaultValue: param2.defaultValue || '',
+				description: param2.value || ''
 			})
 		})
 		return requestParams
