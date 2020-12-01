@@ -3,16 +3,33 @@
 	"description": "剪贴板内容解析器",
 	"version": "1.0.1",
 	"scripts": {
-		"eslint": "eslint --fix --ext .vue,.js",
-		"prettier": "npx prettier --write bin"
+		"build:watch": "cross-env BUILD_WATCH=true npm run build:common",
+		"build:common": "cross-env ENV_NSP=cm2 npx webpack --config webpack.config.js",
+		"build:amd": "cross-env ENV_NSP=amd npx webpack --config webpack.config.js",
+		"build:umd": "cross-env ENV_NSP=umd npx webpack --config webpack.config.js",
+		"build:docs": "sh bin/docs.sh",
+		"dist": "npm run clean && npm run build:docs && npm run build:common && npm run build:umd && npm run build:amd",
+		"clean": "rimraf lib",
+		"eslint": "eslint --fix --ext .js ./",
+		"prettier": "npx prettier --write ./"
 	},
-	"main": "index.js",
-	"dependencies": {},
+	"main": "lib/clipboard-parser.js",
+	"dependencies": {
+		"core-js": "^3.8.0"
+	},
 	"devDependencies": {
+		"@babel/core": "^7.12.9",
+		"@babel/preset-env": "^7.12.7",
 		"babel-eslint": "^10.1.0",
+		"babel-loader": "^8.2.2",
+		"cross-env": "^7.0.2",
 		"eslint": "7.8.1",
 		"eslint-plugin-prettier": "3.1.4",
-		"prettier": "2.1.1"
+		"jsdoc-to-markdown": "^6.0.1",
+		"prettier": "2.1.1",
+		"terser-webpack-plugin": "^5.0.3",
+		"webpack": "^5.9.0",
+		"webpack-cli": "^4.2.0"
 	},
 	"repository": {
 		"type": "git",
