@@ -34,7 +34,6 @@ export default function clipboardParser(clipdata, options = {}) {
 	} else if (type === 2) {
 		reg = new RegExp('@ApiModelProperty\\(' + mapVariableReg + '\\)[\\n\\r\\t ]*(private|public)? ?([\\w]+) ([\\w]+)', 'g')
 	}
-	console.log(rows)
 	rows = rows.map((txt, i) => {
 		let arr = txt ? txt.split('\t') : []
 		if (i === 0) {
@@ -49,7 +48,6 @@ export default function clipboardParser(clipdata, options = {}) {
 	if (notTableData) {
 		rows = rows.map(txt => txt.join('')).join('')
 	}
-	console.log(rows)
 	if (type === 1 && isRequestParam) {
 		rows.replace(reg, (a, b, c, d, e, f) => {
 			let param1 = {},
