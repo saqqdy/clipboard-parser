@@ -1,7 +1,7 @@
 {
 	"name": "clipboard-parser",
 	"description": "剪贴板内容解析器",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"scripts": {
 		"build:watch": "cross-env BUILD_WATCH=true npm run build:common",
 		"build:common": "cross-env ENV_NSP=cm2 npx webpack --config webpack.config.js",

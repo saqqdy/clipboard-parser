@@ -14,7 +14,7 @@ const dataTypaMap = {
 }
 const mapVariableReg = '([\\w="",\\- \\u4e00-\\u9fa5]+)'
 
-export function clipboardParser(clipdata, options = {}) {
+export default function clipboardParser(clipdata, options = {}) {
 	// 读取类型，默认自动识别 0=auto 1=requestParam 2=pathVariable
 	let text = clipdata
 			.getData('Text')
@@ -45,7 +45,6 @@ export function clipboardParser(clipdata, options = {}) {
 		arr = arr.map(el => el.replace(/\s+/g, ' '))
 		return arr
 	})
-	console.log(rows)
 	if (notTableData) {
 		rows = rows.map(txt => txt.join('')).join('')
 	}
@@ -82,9 +81,9 @@ export function clipboardParser(clipdata, options = {}) {
 				param2 = Object.fromEntries(p2)
 			}
 			params.push({
-				required: true,
 				type: dataTypaMap[d.toLowerCase()] || 'string',
-				...param1,
+				required: typeof param1.required !== 'undefined' ? param1.required : true,
+				name: param1.value,
 				defaultValue: param2.defaultValue || '',
 				description: param2.value || ''
 			})
@@ -111,7 +110,8 @@ export function clipboardParser(clipdata, options = {}) {
 				required: true,
 				type: d ? dataTypaMap[d.toLowerCase()] : 'String',
 				description: param1.value,
-				value: e
+				defaultValue: '',
+				name: e
 			})
 		})
 		return params

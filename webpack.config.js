@@ -4,7 +4,7 @@ let plugins = [],
 	publicPath = process.env.PUBLIC_PATH || '',
 	config = {
 		umd: {
-			entry: [path.resolve(__dirname, 'src/index.js')],
+			entry: [path.resolve(__dirname, 'src/clipboard-parser.js')],
 			output: {
 				filename: 'clipboard-parser.umd.js',
 				libraryTarget: 'umd',
@@ -15,18 +15,18 @@ let plugins = [],
 		},
 		cm2: {
 			// entry: { app: [path.resolve(__dirname, 'src/index.js')] },
-			entry: [path.resolve(__dirname, 'src/index.js')],
+			entry: path.resolve(__dirname, 'src/clipboard-parser.js'),
 			output: {
 				filename: 'clipboard-parser.js',
 				chunkFilename: '[id].js',
 				libraryTarget: 'commonjs2',
 				sourceMapFilename: 'clipboard-parser.js.map',
 				library: 'clipboardParser',
-				// libraryExport: 'default'
+				libraryExport: 'default'
 			}
 		},
 		amd: {
-			entry: [path.resolve(__dirname, 'src/index.js')],
+			entry: [path.resolve(__dirname, 'src/clipboard-parser.js')],
 			output: {
 				filename: 'clipboard-parser.amd.js',
 				chunkFilename: '[id].amd.js',
