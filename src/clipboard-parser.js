@@ -30,10 +30,11 @@ export default function clipboardParser(clipdata, options = {}) {
 		params = []
 	const { type = isRequestParam ? 1 : isApiModel ? 2 : -1 } = options
 	if (type === 1) {
-		reg = new RegExp('@RequestParam\\(' + mapVariableReg + '\\)[\\n\\r\\t ]*@ApiParam\\(' + mapVariableReg + '\\)[\\n\\r\\t ]*([\\w]+)', 'g')
+		reg = new RegExp('@RequestParam\\(' + mapVariableReg + '\\)[\\n\\r\\t ]*(@ApiParam\\(' + mapVariableReg + '\\))?[\\n\\r\\t ]*([\\w]+) ([\\w]+)', 'g')
 	} else if (type === 2) {
 		reg = new RegExp('@ApiModelProperty\\(' + mapVariableReg + '\\)[\\n\\r\\t ]*(private|public)? ?([\\w]+) ([\\w]+)', 'g')
 	}
+	console.log(rows)
 	rows = rows.map((txt, i) => {
 		let arr = txt ? txt.split('\t') : []
 		if (i === 0) {
@@ -48,15 +49,16 @@ export default function clipboardParser(clipdata, options = {}) {
 	if (notTableData) {
 		rows = rows.map(txt => txt.join('')).join('')
 	}
+	console.log(rows)
 	if (type === 1 && isRequestParam) {
-		rows.replace(reg, (a, b, c, d) => {
+		rows.replace(reg, (a, b, c, d, e, f) => {
 			let param1 = {},
 				param2 = {}
 			if (b.indexOf('=') === -1 && b.indexOf(',') === -1) {
 				param1 = { value: b.replace(/^"([\s\S]*)"$/, '$1') }
 			} else {
-				let p1 = b.replace(/\s+/g, '').split(',')
-				p1 = p1.map(param => {
+				let pm1 = b.replace(/\s+/g, '').split(',')
+				pm1 = pm1.map(param => {
 					let m = param.split('=')
 					if (/^"[\s\S]*"$/.test(m[1])) m[1] = m[1].replace(/^"([\s\S]*)"$/, '$1')
 					else if (m[1] === 'true') m[1] = true
@@ -64,13 +66,15 @@ export default function clipboardParser(clipdata, options = {}) {
 					else m[1] = +m[1]
 					return m
 				})
-				param1 = Object.fromEntries(p1)
+				param1 = Object.fromEntries(pm1)
 			}
-			if (c.indexOf('=') === -1 && c.indexOf(',') === -1) {
-				param2 = { value: c.replace(/^"([\s\S]*)"$/, '$1') }
+			if (d === undefined) {
+				console.info('没有ApiParam定义')
+			} else if (d.indexOf('=') === -1 && d.indexOf(',') === -1) {
+				param2 = { value: d.replace(/^"([\s\S]*)"$/, '$1') }
 			} else {
-				let p2 = c.replace(/\s+/g, '').split(',')
-				p2 = p2.map(param => {
+				let pm2 = d.replace(/\s+/g, '').split(',')
+				pm2 = pm2.map(param => {
 					let m = param.split('=')
 					if (/^"[\s\S]*"$/.test(m[1])) m[1] = m[1].replace(/^"([\s\S]*)"$/, '$1')
 					else if (m[1] === 'true') m[1] = true
@@ -78,12 +82,12 @@ export default function clipboardParser(clipdata, options = {}) {
 					else m[1] = +m[1]
 					return m
 				})
-				param2 = Object.fromEntries(p2)
+				param2 = Object.fromEntries(pm2)
 			}
 			params.push({
-				type: dataTypaMap[d.toLowerCase()] || 'string',
+				type: dataTypaMap[e.toLowerCase()] || 'String',
 				required: typeof param1.required !== 'undefined' ? param1.required : true,
-				name: param1.value,
+				name: param1.value || f,
 				defaultValue: param2.defaultValue || '',
 				description: param2.value || ''
 			})
@@ -95,8 +99,8 @@ export default function clipboardParser(clipdata, options = {}) {
 			if (b.indexOf('=') === -1 && b.indexOf(',') === -1) {
 				param1 = { value: b.replace(/^"([\s\S]*)"$/, '$1') }
 			} else {
-				let p1 = b.replace(/\s+/g, '').split(',')
-				p1 = p1.map(param => {
+				let pm1 = b.replace(/\s+/g, '').split(',')
+				pm1 = pm1.map(param => {
 					let m = param.split('=')
 					if (/^"[\s\S]*"$/.test(m[1])) m[1] = m[1].replace(/^"([\s\S]*)"$/, '$1')
 					else if (m[1] === 'true') m[1] = true
@@ -104,7 +108,7 @@ export default function clipboardParser(clipdata, options = {}) {
 					else m[1] = +m[1]
 					return m
 				})
-				param1 = Object.fromEntries(p1)
+				param1 = Object.fromEntries(pm1)
 			}
 			params.push({
 				required: true,
