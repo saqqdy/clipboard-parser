@@ -1,6 +1,13 @@
 # clipboard-parser
 支持解析@RequestParam/@ApiModelProperty接口定义代码、Word、Excel以及其他表格类数据
 
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
+[![David deps][david-image]][david-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+[![npm download][download-image]][download-url]
+
 
 # 示例
 

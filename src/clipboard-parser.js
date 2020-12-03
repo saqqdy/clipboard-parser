@@ -135,7 +135,7 @@ export default function clipboardParser(clipdata, options = {}) {
 					else m[1] = +m[1]
 					return m
 				})
-				param1 = Object.fromEntries(pm1)
+				param1 = fromEntries(pm1)
 			}
 			params.push({
 				required: true,
