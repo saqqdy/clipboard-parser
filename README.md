@@ -10,7 +10,7 @@
 
 [npm-image]: https://img.shields.io/npm/v/clipboard-parser.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/clipboard-parser
-[travis-image]: https://img.shields.io/travis/saqqdy/clipboard-parser.svg?style=flat-square
+[travis-image]: https://travis-ci.org/saqqdy/clipboard-parser.svg?branch=master
 [travis-url]: https://travis-ci.org/saqqdy/clipboard-parser
 [codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/clipboard-parser.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/saqqdy/clipboard-parser?branch=master
@@ -20,7 +20,6 @@
 [snyk-url]: https://snyk.io/test/npm/clipboard-parser
 [download-image]: https://img.shields.io/npm/dm/clipboard-parser.svg?style=flat-square
 [download-url]: https://npmjs.org/package/clipboard-parser
-
 
 # 示例
 
