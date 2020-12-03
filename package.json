@@ -43,7 +43,13 @@
 		"剪贴板",
 		"解析器"
 	],
-	"author": "saqqdy.com",
+	"engines": {
+		"node": ">=10.0.0"
+	},
+	"ci": {
+		"version": "10, 11, 12, 13, 14, 15"
+	},
+	"author": "saqqdy <saqqdy@qq.com>",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/saqqdy/clipboard-parser/issues"
