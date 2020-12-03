@@ -1,3 +1,32 @@
+let fromEntries =
+	Object.fromEntries ||
+	function fromEntries(iterable) {
+		let entries = Array.isArray(iterable) ? createEntries(iterable) : 'entries' in iterable ? iterable.entries() : iterable
+		let object = {}
+		let entry
+		while ((entry = entries.next()) && !entry.done) {
+			let pair = entry.value
+			Object.defineProperty(object, pair[0], {
+				configurable: true,
+				enumerable: true,
+				writable: true,
+				value: pair[1]
+			})
+		}
+		return object
+	}
+function createEntries(array) {
+	let i = -1
+	return {
+		next: function () {
+			let done = array.length <= ++i
+			return {
+				done: done,
+				value: done ? void 0 : array[i]
+			}
+		}
+	}
+}
 const dataTypaMap = {
 	string: 'String',
 	char: 'String',
@@ -64,7 +93,7 @@ export default function clipboardParser(clipdata, options = {}) {
 					else m[1] = +m[1]
 					return m
 				})
-				param1 = Object.fromEntries(pm1)
+				param1 = fromEntries(pm1)
 			}
 			if (d === undefined) {
 				console.info('没有ApiParam定义')
@@ -80,7 +109,7 @@ export default function clipboardParser(clipdata, options = {}) {
 					else m[1] = +m[1]
 					return m
 				})
-				param2 = Object.fromEntries(pm2)
+				param2 = fromEntries(pm2)
 			}
 			params.push({
 				type: dataTypaMap[e.toLowerCase()] || 'String',
