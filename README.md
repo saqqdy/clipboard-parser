@@ -38,6 +38,7 @@ yarn add clipboard-parser
 # 使用
 
 ```vue
+# vue页面
 <template>
     <textarea @paste="handlePaste"></textarea>
 </template>
