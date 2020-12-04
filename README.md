@@ -21,6 +21,41 @@
 [download-image]: https://img.shields.io/npm/dm/clipboard-parser.svg?style=flat-square
 [download-url]: https://npmjs.org/package/clipboard-parser
 
+
+
+# 安装
+
+```shell
+# 通过npm安装
+npm install -S clipboard-parser
+
+# 或者通过yarn安装
+yarn add clipboard-parser
+```
+
+
+
+# 使用
+
+```vue
+<template>
+    <textarea @paste="handlePaste"></textarea>
+</template>
+<script>
+import clipboardParser from 'clipboard-parser';
+export default {
+    methods: {
+        handlePaste(e) {
+            const result = clipboardParser(window.clipboardData || e.clipboardData)
+            // ...
+        }
+    }
+}
+</script>
+```
+
+
+
 # 示例
 
 
