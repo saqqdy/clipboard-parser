@@ -42,6 +42,7 @@ const dataTypaMap = {
 	float: 'Number'
 }
 const mapVariableReg = '([\\w="",\\- \\u4e00-\\u9fa5]+)'
+const mapIgnoreStringReg = '[\\n\\r\\t ;]*'
 
 export default function clipboardParser(clipdata, options = {}) {
 	// 读取类型，默认自动识别 0=auto 1=requestParam 2=pathVariable
@@ -51,7 +52,7 @@ export default function clipboardParser(clipdata, options = {}) {
 			.replace(/\r/g, '\n')
 			.replace(/[\n\r]+$/, ''),
 		isRequestParam = text.indexOf('@RequestParam') > -1,
-		isApiModel = text.indexOf('@ApiModelProperty') > -1,
+		isApiModel = text.indexOf('@ApiModelProperty') > -1 || text.indexOf('private ') > -1,
 		notTableData = text.indexOf('\t') === -1 || isRequestParam,
 		reg,
 		len,
@@ -59,9 +60,9 @@ export default function clipboardParser(clipdata, options = {}) {
 		params = []
 	const { type = isRequestParam ? 1 : isApiModel ? 2 : -1 } = options
 	if (type === 1) {
-		reg = new RegExp('@RequestParam\\(' + mapVariableReg + '\\)[\\n\\r\\t ]*(@ApiParam\\(' + mapVariableReg + '\\))?[\\n\\r\\t ]*([\\w]+) ([\\w]+)', 'g')
+		reg = new RegExp('@RequestParam\\(' + mapVariableReg + '\\)' + mapIgnoreStringReg + '(@ApiParam\\(' + mapVariableReg + '\\))?' + mapIgnoreStringReg + '([\\w]+) ([\\w]+)', 'g')
 	} else if (type === 2) {
-		reg = new RegExp('(@ApiModelProperty\\(' + mapVariableReg + '\\))?[\\n\\r\\t ]*(private|public)? ?([\\w]+) ([\\w]+)', 'g')
+		reg = new RegExp('(@ApiModelProperty\\(' + mapVariableReg + '\\))?' + mapIgnoreStringReg + '(private|public)? ?([\\w]+) ([\\w]+)', 'g')
 	}
 	rows = rows.map((txt, i) => {
 		let arr = txt ? txt.split('\t') : []
@@ -142,7 +143,7 @@ export default function clipboardParser(clipdata, options = {}) {
 			params.push({
 				required: true,
 				type: e ? dataTypaMap[e.toLowerCase()] : 'String',
-				description: param1.value,
+				description: param1.value || '',
 				defaultValue: '',
 				name: f
 			})
