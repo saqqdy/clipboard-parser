@@ -61,7 +61,7 @@ export default function clipboardParser(clipdata, options = {}) {
 	if (type === 1) {
 		reg = new RegExp('@RequestParam\\(' + mapVariableReg + '\\)[\\n\\r\\t ]*(@ApiParam\\(' + mapVariableReg + '\\))?[\\n\\r\\t ]*([\\w]+) ([\\w]+)', 'g')
 	} else if (type === 2) {
-		reg = new RegExp('@ApiModelProperty\\(' + mapVariableReg + '\\)[\\n\\r\\t ]*(private|public)? ?([\\w]+) ([\\w]+)', 'g')
+		reg = new RegExp('(@ApiModelProperty\\(' + mapVariableReg + '\\))?[\\n\\r\\t ]*(private|public)? ?([\\w]+) ([\\w]+)', 'g')
 	}
 	rows = rows.map((txt, i) => {
 		let arr = txt ? txt.split('\t') : []
@@ -121,12 +121,14 @@ export default function clipboardParser(clipdata, options = {}) {
 		})
 		return params
 	} else if (type === 2 && isApiModel) {
-		rows.replace(reg, (a, b, c, d, e) => {
+		rows.replace(reg, (a, b, c, d, e, f) => {
 			let param1 = {}
-			if (b.indexOf('=') === -1 && b.indexOf(',') === -1) {
-				param1 = { value: b.replace(/^"([\s\S]*)"$/, '$1') }
+			if (c === undefined) {
+				console.info('没有ApiParam定义')
+			} else if (c.indexOf('=') === -1 && c.indexOf(',') === -1) {
+				param1 = { value: c.replace(/^"([\s\S]*)"$/, '$1') }
 			} else {
-				let pm1 = b.replace(/\s+/g, '').split(',')
+				let pm1 = c.replace(/\s+/g, '').split(',')
 				pm1 = pm1.map(param => {
 					let m = param.split('=')
 					if (/^"[\s\S]*"$/.test(m[1])) m[1] = m[1].replace(/^"([\s\S]*)"$/, '$1')
@@ -139,10 +141,10 @@ export default function clipboardParser(clipdata, options = {}) {
 			}
 			params.push({
 				required: true,
-				type: d ? dataTypaMap[d.toLowerCase()] : 'String',
+				type: e ? dataTypaMap[e.toLowerCase()] : 'String',
 				description: param1.value,
 				defaultValue: '',
-				name: e
+				name: f
 			})
 		})
 		return params
