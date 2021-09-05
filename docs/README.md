@@ -1,3 +1,5 @@
+index.md - v2.0.0 / [Exports](modules.md)
+
 # clipboard-parser
 
 支持解析@RequestParam/@ApiModelProperty 接口定义代码、Word、Excel 以及其他表格类数据
