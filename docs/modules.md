@@ -65,4 +65,4 @@ rows 数据
 
 #### Defined in
 
-index.ts:76
+[index.ts:76](https://github.com/saqqdy/clipboard-parser/blob/7799563/src/index.ts#L76)
