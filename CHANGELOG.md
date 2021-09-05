@@ -1,4 +1,4 @@
-# 2020.12.03 v1.1.0 更新日志
+# 2021.09.05 v2.0.0 更新日志
 
 1. 采用`typescript`重构代码
 2. 传入的第一个参数更改为 event：`clipboardParser(window.clipboardData || event.clipboardData)` 改为 `clipboardParser(e)`
