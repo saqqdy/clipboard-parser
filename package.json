@@ -1,58 +1,97 @@
 {
-	"name": "clipboard-parser",
-	"description": "剪贴板内容解析器",
-	"version": "1.1.0",
-	"scripts": {
-		"build:watch": "cross-env BUILD_WATCH=true npm run build:common",
-		"build:common": "cross-env ENV_NSP=cm2 npx webpack --config webpack.config.js",
-		"build:amd": "cross-env ENV_NSP=amd npx webpack --config webpack.config.js",
-		"build:umd": "cross-env ENV_NSP=umd npx webpack --config webpack.config.js",
-		"build:docs": "sh bin/docs.sh",
-		"dist": "npm run clean && npm run build:docs && npm run build:common && npm run build:umd && npm run build:amd",
-		"clean": "rimraf lib",
-		"eslint": "eslint --fix --ext .js ./",
-		"prettier": "npx prettier --write ./"
-	},
-	"main": "lib/clipboard-parser.js",
-	"dependencies": {
-		"core-js": "^3.8.0"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.12.9",
-		"@babel/preset-env": "^7.12.7",
-		"babel-eslint": "^10.1.0",
-		"babel-loader": "^8.2.2",
-		"cross-env": "^7.0.2",
-		"eslint": "7.14.0",
-		"eslint-plugin-prettier": "3.1.4",
-		"jsdoc-to-markdown": "^6.0.1",
-		"prettier": "2.2.1",
-		"terser-webpack-plugin": "4.2.3",
-		"webpack": "4.44.2",
-		"webpack-cli": "^4.2.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/saqqdy/clipboard-parser.git"
-	},
-	"keywords": [
-		"clipboard-parser",
-		"clipboard",
-		"parser",
-		"clipboardData",
-		"剪贴板",
-		"解析器"
-	],
-	"engines": {
-		"node": ">=10.0.0"
-	},
-	"ci": {
-		"version": "10, 11, 12, 13, 14, 15"
-	},
-	"author": "saqqdy <saqqdy@qq.com>",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/saqqdy/clipboard-parser/issues"
-	},
-	"homepage": "https://github.com/saqqdy/clipboard-parser#readme"
+    "name": "clipboard-parser",
+    "description": "剪贴板内容解析器",
+    "version": "2.0.0",
+    "main": "lib/index.js",
+    "unpkg": "lib/index.js",
+    "module": "lib/index.esm.js",
+    "files": [
+        "es",
+        "lib",
+        "typings"
+    ],
+    "directories": {
+        "es": "es",
+        "lib": "lib",
+        "src": "src"
+    },
+    "scripts": {
+        "build": "rimraf lib es && rollup -c",
+        "build:umd": "webpack --config webpack.config.js",
+        "build:docs": "sh scripts/docs.sh",
+        "build:types": "run-s build-temp-types roll-types",
+        "build-temp-types": "tsc --emitDeclarationOnly --outDir temp/ -p src/",
+        "patch-types": "node script/patchTypes",
+        "roll-types": "api-extractor run && rimraf temp",
+        "dev": "rollup -c -w",
+        "dist": "run-s eslint prettier build build:umd build:types docs prettier:docs",
+        "docs": "rimraf docs && typedoc",
+        "eslint": "eslint --fix --ext .ts,.js",
+        "prettier": "prettier --write \"**/*.{js,ts,json,md}\"",
+        "prettier:docs": "prettier --write \"**/*.md\"",
+        "clean": "rimraf lib es"
+    },
+    "dependencies": {
+        "core-js": "^3.8.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.9",
+        "@babel/plugin-proposal-class-properties": "^7.14.5",
+        "@babel/plugin-proposal-decorators": "^7.15.4",
+        "@babel/plugin-transform-runtime": "^7.15.0",
+        "@babel/preset-env": "^7.12.7",
+        "@babel/preset-typescript": "^7.15.0",
+        "@microsoft/api-extractor": "^7.18.7",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^20.0.0",
+        "@rollup/plugin-node-resolve": "^13.0.4",
+        "@saqqdy/prettier-config": "^1.0.4",
+        "@typescript-eslint/eslint-plugin": "^4.30.0",
+        "@typescript-eslint/parser": "^4.30.0",
+        "babel-eslint": "^10.1.0",
+        "babel-loader": "^8.2.2",
+        "cross-env": "^7.0.2",
+        "eslint": "7.14.0",
+        "eslint-config-sets": "^1.4.3",
+        "eslint-plugin-prettier": "3.1.4",
+        "npm-run-all": "^4.1.5",
+        "prettier": "2.2.1",
+        "progress-bar-webpack-plugin": "^2.1.0",
+        "rollup": "^2.56.3",
+        "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-typescript2": "^0.30.0",
+        "rollup-plugin-visualizer": "^5.5.2",
+        "terser-webpack-plugin": "4.2.3",
+        "typedoc": "^0.21.9",
+        "typedoc-plugin-markdown": "^3.10.4",
+        "typescript": "^4.4.2",
+        "webpack": "4.44.2",
+        "webpack-cli": "^4.2.0",
+        "webpack-merge": "^5.8.0",
+        "webpack-node-externals": "^3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saqqdy/clipboard-parser.git"
+    },
+    "keywords": [
+        "clipboard-parser",
+        "clipboard",
+        "parser",
+        "clipboardData",
+        "剪贴板",
+        "解析器"
+    ],
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "ci": {
+        "version": "10, 11, 12, 13, 14, 15"
+    },
+    "author": "saqqdy <saqqdy@qq.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/saqqdy/clipboard-parser/issues"
+    },
+    "homepage": "https://github.com/saqqdy/clipboard-parser#readme"
 }
