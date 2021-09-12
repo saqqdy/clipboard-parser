@@ -13,8 +13,8 @@
 
 [npm-image]: https://img.shields.io/npm/v/clipboard-parser.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/clipboard-parser
-[travis-image]: https://travis-ci.org/saqqdy/clipboard-parser.svg?branch=master
-[travis-url]: https://travis-ci.org/saqqdy/clipboard-parser
+[travis-image]: https://travis-ci.com/saqqdy/clipboard-parser.svg?branch=master
+[travis-url]: https://travis-ci.com/saqqdy/clipboard-parser
 [codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/clipboard-parser.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/saqqdy/clipboard-parser?branch=master
 [david-image]: https://img.shields.io/david/saqqdy/clipboard-parser.svg?style=flat-square
