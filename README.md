@@ -12,6 +12,8 @@
 [![gzip][gzip-image]][gzip-url]
 [![License][license-image]][license-url]
 
+[![Sonar][sonar-image]][sonar-url]
+
 [npm-image]: https://img.shields.io/npm/v/clipboard-parser.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/clipboard-parser
 [codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
@@ -30,6 +32,8 @@
 [gzip-url]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
 [license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: LICENSE
+[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_clipboard-parser
+[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_clipboard-parser
 
 ## **完整文档请查阅： [API 完整文档](./docs/modules.md)**
 
