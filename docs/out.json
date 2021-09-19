@@ -1,164 +1,172 @@
 {
-    "id": 0,
-    "name": "index.md - v2.0.0",
-    "kind": 0,
-    "kindString": "Project",
-    "flags": {},
-    "originalName": "index.md",
-    "children": [
-        {
-            "id": 7,
-            "name": "default",
-            "kind": 16777216,
-            "kindString": "Reference",
-            "flags": {},
-            "target": 1
-        },
-        {
-            "id": 5,
-            "name": "ClipboardParserOptionsType",
-            "kind": 256,
-            "kindString": "Interface",
-            "flags": {},
-            "children": [
-                {
-                    "id": 6,
-                    "name": "type",
-                    "kind": 1024,
-                    "kindString": "Property",
-                    "flags": {},
-                    "sources": [
-                        {
-                            "fileName": "index.ts",
-                            "line": 48,
-                            "character": 4
-                        }
-                    ],
-                    "type": {
-                        "type": "union",
-                        "types": [
-                            {
-                                "type": "literal",
-                                "value": 1
-                            },
-                            {
-                                "type": "literal",
-                                "value": -1
-                            },
-                            {
-                                "type": "literal",
-                                "value": 2
-                            }
-                        ]
-                    }
-                }
-            ],
-            "groups": [
-                {
-                    "title": "Properties",
-                    "kind": 1024,
-                    "children": [6]
-                }
-            ],
-            "sources": [
-                {
-                    "fileName": "index.ts",
-                    "line": 47,
-                    "character": 17
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "name": "clipboardParser",
-            "kind": 64,
-            "kindString": "Function",
-            "flags": {},
-            "sources": [
-                {
-                    "fileName": "index.ts",
-                    "line": 76,
-                    "character": 16
-                }
-            ],
-            "signatures": [
-                {
-                    "id": 2,
-                    "name": "clipboardParser",
-                    "kind": 4096,
-                    "kindString": "Call signature",
-                    "flags": {},
-                    "comment": {
-                        "shortText": "解析剪贴板数据",
-                        "returns": "rows数据\n",
-                        "tags": [
-                            {
-                                "tag": "example",
-                                "text": "在vue页面组件里面使用\n```vue\n// vue页面\n<template>\n    </template><textarea @paste=\"handlePaste\"></textarea>\n</template>\n<script>\nimport clipboardParser from 'clipboard-parser'\nexport default {\n    methods: {\n        handlePaste(e) {\n            const result = clipboardParser(e)\n            // ...\n        }\n    }\n}\n</script>\n```"
-                            }
-                        ]
-                    },
-                    "parameters": [
-                        {
-                            "id": 3,
-                            "name": "event",
-                            "kind": 32768,
-                            "kindString": "Parameter",
-                            "flags": {},
-                            "comment": {
-                                "text": "事件对象"
-                            },
-                            "type": {
-                                "type": "reference",
-                                "name": "ClipboardEvent"
-                            }
-                        },
-                        {
-                            "id": 4,
-                            "name": "options",
-                            "kind": 32768,
-                            "kindString": "Parameter",
-                            "flags": {},
-                            "comment": {
-                                "text": "配置项"
-                            },
-                            "type": {
-                                "type": "reference",
-                                "id": 5,
-                                "name": "ClipboardParserOptionsType"
-                            }
-                        }
-                    ],
-                    "type": {
-                        "type": "intrinsic",
-                        "name": "any"
-                    }
-                }
-            ]
-        }
-    ],
-    "groups": [
-        {
-            "title": "References",
-            "kind": 16777216,
-            "children": [7]
-        },
-        {
-            "title": "Interfaces",
-            "kind": 256,
-            "children": [5]
-        },
-        {
-            "title": "Functions",
-            "kind": 64,
-            "children": [1]
-        }
-    ],
-    "sources": [
-        {
-            "fileName": "index.ts",
-            "line": 1,
-            "character": 0
-        }
-    ]
+	"id": 0,
+	"name": "index.md - v2.0.0",
+	"kind": 0,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "index.md",
+	"children": [
+		{
+			"id": 7,
+			"name": "default",
+			"kind": 16777216,
+			"kindString": "Reference",
+			"flags": {},
+			"target": 1
+		},
+		{
+			"id": 5,
+			"name": "ClipboardParserOptionsType",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 6,
+					"name": "type",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 48,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": 1
+							},
+							{
+								"type": "literal",
+								"value": -1
+							},
+							{
+								"type": "literal",
+								"value": 2
+							}
+						]
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						6
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 47,
+					"character": 17
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "clipboardParser",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 76,
+					"character": 16
+				}
+			],
+			"signatures": [
+				{
+					"id": 2,
+					"name": "clipboardParser",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "解析剪贴板数据",
+						"returns": "rows数据\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "在vue页面组件里面使用\n```vue\n// vue页面\n<template>\n    </template><textarea @paste=\"handlePaste\"></textarea>\n</template>\n<script>\nimport clipboardParser from 'clipboard-parser'\nexport default {\n    methods: {\n        handlePaste(e) {\n            const result = clipboardParser(e)\n            // ...\n        }\n    }\n}\n</script>\n```"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 3,
+							"name": "event",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "事件对象"
+							},
+							"type": {
+								"type": "reference",
+								"name": "ClipboardEvent"
+							}
+						},
+						{
+							"id": 4,
+							"name": "options",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "配置项"
+							},
+							"type": {
+								"type": "reference",
+								"id": 5,
+								"name": "ClipboardParserOptionsType"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "References",
+			"kind": 16777216,
+			"children": [
+				7
+			]
+		},
+		{
+			"title": "Interfaces",
+			"kind": 256,
+			"children": [
+				5
+			]
+		},
+		{
+			"title": "Functions",
+			"kind": 64,
+			"children": [
+				1
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0
+		}
+	]
 }

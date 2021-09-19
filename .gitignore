@@ -15,8 +15,6 @@ selenium-debug.log
 .env.test.local
 .env.production.local
 
-/lib
-/es
 *.bak
 *_bak
 *.bak.js

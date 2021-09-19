@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[index.ts:48](https://github.com/saqqdy/clipboard-parser/blob/7799563/src/index.ts#L48)
+[index.ts:48](https://github.com/saqqdy/clipboard-parser/blob/b0cde04/src/index.ts#L48)
