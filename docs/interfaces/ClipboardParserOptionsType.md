@@ -1,4 +1,4 @@
-[index.md - v2.0.0](../README.md) / [Exports](../modules.md) / ClipboardParserOptionsType
+[index.md - v2.0.1](../README.md) / [Exports](../modules.md) / ClipboardParserOptionsType
 
 # Interface: ClipboardParserOptionsType
 
@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[index.ts:48](https://github.com/saqqdy/clipboard-parser/blob/b0cde04/src/index.ts#L48)
+[index.ts:48](https://github.com/saqqdy/clipboard-parser/blob/47571b4/src/index.ts#L48)

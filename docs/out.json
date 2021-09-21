@@ -1,7 +1,7 @@
 {
 	"id": 0,
-	"name": "index.md - v2.0.0",
-	"kind": 0,
+	"name": "index.md - v2.0.1",
+	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
 	"originalName": "index.md",
@@ -108,7 +108,7 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "事件对象"
+								"shortText": "事件对象"
 							},
 							"type": {
 								"type": "reference",
@@ -122,7 +122,7 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "配置项"
+								"shortText": "配置项"
 							},
 							"type": {
 								"type": "reference",

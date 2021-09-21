@@ -1,4 +1,4 @@
-index.md - v2.0.0 / [Exports](modules.md)
+index.md - v2.0.1 / [Exports](modules.md)
 
 # clipboard-parser
 

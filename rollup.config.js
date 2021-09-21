@@ -17,12 +17,14 @@ export default [
             {
                 file: pkg.main,
                 exports: 'auto',
-                format: 'cjs'
+                format: 'cjs',
+                banner: config.banner
             },
             {
                 file: 'lib/index.esm.js',
                 exports: 'auto',
-                format: 'es'
+                format: 'es',
+                banner: config.banner
             }
         ],
         plugins: [

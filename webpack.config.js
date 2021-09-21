@@ -1,6 +1,8 @@
 const path = require('path')
+const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const config = require('./config')
 let plugins = [new ProgressBarPlugin()]
@@ -33,7 +35,18 @@ const baseConfig = {
         children: false
     },
     optimization: {
-        minimize: true
+        // minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                parallel: true,
+                extractComments: false
+            }),
+            // 注意位置，必须放在 TerserPlugin 后面，否则生成的注释描述会被 TerserPlugin 或其它压缩插件清掉
+            new webpack.BannerPlugin({
+                entryOnly: true, // 是否仅在入口包中输出 banner 信息
+                banner: config.bannerText
+            })
+        ]
     },
     plugins: plugins
 }
