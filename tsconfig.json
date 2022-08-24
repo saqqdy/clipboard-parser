@@ -10,6 +10,7 @@
 		// "module": "commonjs",
 		"module": "ESNext",
 		"strict": true,
+		"resolveJsonModule": true,
 		"declaration": true,
 		"noImplicitOverride": true,
 		"noUnusedLocals": true,

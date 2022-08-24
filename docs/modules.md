@@ -1,6 +1,6 @@
-[index.md - v2.0.1](README.md) / Exports
+[index.md - v2.1.0](README.md) / Exports
 
-# index.md - v2.0.1
+# index.md - v2.1.0
 
 ## Table of contents
 
@@ -20,7 +20,7 @@
 
 ### default
 
-• **default**: `Object`
+Renames and re-exports [clipboardParser](modules.md#clipboardparser)
 
 ## Functions
 
@@ -28,41 +28,17 @@
 
 ▸ **clipboardParser**(`event`, `options`): `any`
 
-解析剪贴板数据
-
-**`example`** 在 vue 页面组件里面使用
-
-```vue
-// vue页面
-<template>
-    </template><textarea @paste="handlePaste"></textarea>
-</template>
-<script>
-import clipboardParser from 'clipboard-parser'
-export default {
-    methods: {
-        handlePaste(e) {
-            const result = clipboardParser(e)
-            // ...
-        }
-    }
-}
-</script>
-```
-
 #### Parameters
 
 | Name      | Type                                                                     | Description |
 | :-------- | :----------------------------------------------------------------------- | :---------- |
-| `event`   | `ClipboardEvent`                                                         | 事件对象    |
-| `options` | [`ClipboardParserOptionsType`](interfaces/ClipboardParserOptionsType.md) | 配置项      |
+| `event`   | `ClipboardEvent`                                                         |             |
+| `options` | [`ClipboardParserOptionsType`](interfaces/ClipboardParserOptionsType.md) |             |
 
 #### Returns
 
 `any`
 
-rows 数据
-
 #### Defined in
 
-[index.ts:76](https://github.com/saqqdy/clipboard-parser/blob/47571b4/src/index.ts#L76)
+[index.ts:80](https://github.com/saqqdy/clipboard-parser/blob/ebe9f96/src/index.ts#L80)

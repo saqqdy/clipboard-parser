@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/lib
+/es
 yarn.lock
 /.pnp
 .pnp.js
@@ -31,7 +33,6 @@ yarn-error.log*
 
 # Editor directories and files
 .idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj

@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "index.md - v2.0.1",
+	"name": "index.md - v2.1.0",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
@@ -30,8 +30,8 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 48,
-							"character": 4
+							"line": 52,
+							"character": 1
 						}
 					],
 					"type": {
@@ -39,15 +39,15 @@
 						"types": [
 							{
 								"type": "literal",
+								"value": 2
+							},
+							{
+								"type": "literal",
 								"value": 1
 							},
 							{
 								"type": "literal",
 								"value": -1
-							},
-							{
-								"type": "literal",
-								"value": 2
 							}
 						]
 					}
@@ -57,13 +57,15 @@
 				{
 					"title": "Properties",
 					"kind": 1024,
-					"children": [6]
+					"children": [
+						6
+					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 47,
+					"line": 51,
 					"character": 17
 				}
 			]
@@ -77,7 +79,7 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 76,
+					"line": 80,
 					"character": 16
 				}
 			],
@@ -110,6 +112,8 @@
 							},
 							"type": {
 								"type": "reference",
+								"qualifiedName": "ClipboardEvent",
+								"package": ".pnpm",
 								"name": "ClipboardEvent"
 							}
 						},
@@ -141,17 +145,23 @@
 		{
 			"title": "References",
 			"kind": 16777216,
-			"children": [7]
+			"children": [
+				7
+			]
 		},
 		{
 			"title": "Interfaces",
 			"kind": 256,
-			"children": [5]
+			"children": [
+				5
+			]
 		},
 		{
 			"title": "Functions",
 			"kind": 64,
-			"children": [1]
+			"children": [
+				1
+			]
 		}
 	],
 	"sources": [
