@@ -1,7 +1,8 @@
 {
     "name": "clipboard-parser",
     "description": "剪贴板内容解析器",
-    "version": "2.0.1",
+    "version": "2.1.0",
+    "packageManager": "pnpm@7.7.0",
     "main": "lib/index.js",
     "unpkg": "lib/index.js",
     "module": "lib/index.esm.js",
@@ -24,6 +25,9 @@
         "patch-types": "node script/patchTypes",
         "roll-types": "api-extractor run && rimraf temp",
         "dev": "rollup -c -w",
+        "pub": "tscjs scripts/publish",
+        "unpub": "tscjs scripts/unpublish",
+        "sync": "tscjs scripts/sync",
         "dist": "run-s eslint prettier build build:umd build:types docs prettier:docs",
         "docs": "rimraf docs && typedoc",
         "eslint": "eslint --fix --ext .ts,.js",
@@ -41,21 +45,17 @@
         "@babel/plugin-transform-runtime": "^7.15.0",
         "@babel/preset-env": "^7.15.6",
         "@babel/preset-typescript": "^7.15.0",
+        "@eslint-sets/eslint-config-simple-ts": "^3.0.4",
         "@microsoft/api-extractor": "^7.18.9",
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-commonjs": "^20.0.0",
         "@rollup/plugin-node-resolve": "^13.0.4",
-        "@saqqdy/prettier-config": "^1.0.4",
-        "@typescript-eslint/eslint-plugin": "^4.31.2",
-        "@typescript-eslint/parser": "^4.31.2",
-        "babel-eslint": "^10.1.0",
         "babel-loader": "^8.2.2",
         "cross-env": "^7.0.2",
-        "eslint": "7.32.0",
-        "eslint-config-sets": "^1.5.3",
-        "eslint-plugin-prettier": "3.1.4",
+        "eslint": "8.20.0",
         "npm-run-all": "^4.1.5",
         "prettier": "2.4.1",
+        "prettier-config-common": "^1.2.1",
         "progress-bar-webpack-plugin": "^2.1.0",
         "rollup": "^2.56.3",
         "rollup-plugin-terser": "^7.0.2",
@@ -87,6 +87,17 @@
     },
     "ci": {
         "version": "10, 11, 12, 13, 14, 15"
+    },
+    "pnpm": {
+        "peerDependencyRules": {
+            "ignoreMissing": [
+                "tslib",
+                "webpack"
+            ],
+            "allowedVersions": {
+                "eslint": "^8.0.0"
+            }
+        }
     },
     "author": "saqqdy <saqqdy@qq.com>",
     "license": "ISC",
