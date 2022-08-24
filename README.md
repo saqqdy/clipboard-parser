@@ -1,3 +1,5 @@
+<div style="text-align: center;" align="center">
+
 # clipboard-parser
 
 支持解析@RequestParam/@ApiModelProperty 接口定义代码、Word、Excel 以及其他表格类数据
@@ -6,34 +8,13 @@
 [![Codacy Badge][codacy-image]][codacy-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
-[![David deps][david-image]][david-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
 [![gzip][gzip-image]][gzip-url]
 [![License][license-image]][license-url]
 
 [![Sonar][sonar-image]][sonar-url]
 
-[npm-image]: https://img.shields.io/npm/v/clipboard-parser.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/clipboard-parser
-[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
-[codacy-url]: https://www.codacy.com/gh/saqqdy/clipboard-parser/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/clipboard-parser&utm_campaign=Badge_Grade
-[travis-image]: https://travis-ci.com/saqqdy/clipboard-parser.svg?branch=master
-[travis-url]: https://travis-ci.com/saqqdy/clipboard-parser
-[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/clipboard-parser.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/saqqdy/clipboard-parser?branch=master
-[david-image]: https://img.shields.io/david/saqqdy/clipboard-parser.svg?style=flat-square
-[david-url]: https://david-dm.org/saqqdy/clipboard-parser
-[snyk-image]: https://snyk.io/test/npm/clipboard-parser/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/clipboard-parser
-[download-image]: https://img.shields.io/npm/dm/clipboard-parser.svg?style=flat-square
-[download-url]: https://npmjs.org/package/clipboard-parser
-[gzip-image]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[gzip-url]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: LICENSE
-[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_clipboard-parser
-[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_clipboard-parser
+</div>
 
 ## **完整文档请查阅： [API 完整文档](./docs/modules.md)**
 
@@ -164,3 +145,20 @@ export default {
     }
 ]
 ```
+
+[npm-image]: https://img.shields.io/npm/v/clipboard-parser.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/clipboard-parser
+[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
+[codacy-url]: https://www.codacy.com/gh/saqqdy/clipboard-parser/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/clipboard-parser&utm_campaign=Badge_Grade
+[travis-image]: https://travis-ci.com/saqqdy/clipboard-parser.svg?branch=master
+[travis-url]: https://travis-ci.com/saqqdy/clipboard-parser
+[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/clipboard-parser.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/saqqdy/clipboard-parser?branch=master
+[download-image]: https://img.shields.io/npm/dm/clipboard-parser.svg?style=flat-square
+[download-url]: https://npmjs.org/package/clipboard-parser
+[gzip-image]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[gzip-url]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: LICENSE
+[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_clipboard-parser
+[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_clipboard-parser
