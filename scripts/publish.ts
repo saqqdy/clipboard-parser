@@ -9,6 +9,6 @@ if (version.includes('beta')) command += ' --tag beta'
 if (version.includes('alpha')) command += ' --tag alpha'
 
 execSync(command, {
-    stdio: 'inherit'
+	stdio: 'inherit'
 })
 console.info('Published clipboard-parser')

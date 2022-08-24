@@ -57,9 +57,7 @@
 				{
 					"title": "Properties",
 					"kind": 1024,
-					"children": [
-						6
-					]
+					"children": [6]
 				}
 			],
 			"sources": [
@@ -143,23 +141,17 @@
 		{
 			"title": "References",
 			"kind": 16777216,
-			"children": [
-				7
-			]
+			"children": [7]
 		},
 		{
 			"title": "Interfaces",
 			"kind": 256,
-			"children": [
-				5
-			]
+			"children": [5]
 		},
 		{
 			"title": "Functions",
 			"kind": 64,
-			"children": [
-				1
-			]
+			"children": [1]
 		}
 	],
 	"sources": [

@@ -1,4 +1,4 @@
 module.exports = {
-    extends: ['@eslint-sets/simple-ts'],
-    rules: {}
+	extends: ['@eslint-sets/simple-ts'],
+	rules: {}
 }
