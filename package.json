@@ -57,7 +57,7 @@
 		"prettier": "2.7.1",
 		"prettier-config-common": "^1.2.1",
 		"progress-bar-webpack-plugin": "^2.1.0",
-		"rollup": "^2.56.3",
+		"rollup": "^3.0.0",
 		"rollup-plugin-terser": "^7.0.2",
 		"rollup-plugin-typescript2": "^0.34.0",
 		"rollup-plugin-visualizer": "^5.5.2",
