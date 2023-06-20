@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -21,7 +21,7 @@ devDependencies:
     version: 7.21.5(@babel/core@7.22.1)
   '@eslint-sets/eslint-config-ts':
     specifier: ^5.3.0
-    version: 5.3.0(@babel/core@7.22.1)(eslint@8.42.0)(prettier@2.8.8)(typescript@5.1.3)
+    version: 5.4.0(@babel/core@7.22.1)(eslint@8.42.0)(prettier@2.8.8)(typescript@5.1.3)
   '@microsoft/api-extractor':
     specifier: ^7.35.1
     version: 7.35.1(@types/node@20.2.5)
@@ -1446,8 +1446,8 @@ packages:
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: true
 
-  /@eslint-sets/eslint-config-basic@5.3.0(@babel/core@7.22.1)(@typescript-eslint/parser@5.60.0)(eslint@8.42.0)(prettier@2.8.8)(typescript@5.1.3):
-    resolution: {integrity: sha512-g6D1Lv8iaoZ+M15T4ermUcio+OTI1W1tFuH3RvfY/ZBHqnRT9ZF/RS8Vz+tuPs5ceuxD1P0inCm9T4yf34tnrw==}
+  /@eslint-sets/eslint-config-basic@5.4.0(@babel/core@7.22.1)(@typescript-eslint/parser@5.60.0)(eslint@8.42.0)(prettier@2.8.8)(typescript@5.1.3):
+    resolution: {integrity: sha512-fmlCgPywhTZ+9q90ZXsOcIrFIODF0oYp0BHjUpQ/avJ/AM2Ivb8ZMbOCsLCh9+DdzQuDGlA14EleU+CuAsinyQ==}
     peerDependencies:
       eslint: '>=7.4.0 || ^8.0.0'
       prettier: '>=2.0.0'
@@ -1483,8 +1483,8 @@ packages:
       - supports-color
     dev: true
 
-  /@eslint-sets/eslint-config-ts@5.3.0(@babel/core@7.22.1)(eslint@8.42.0)(prettier@2.8.8)(typescript@5.1.3):
-    resolution: {integrity: sha512-m1Xydw9HmTYdWHnljy0ltTgmkh92ZJKRvNKszqxuUjaAkIWdUmysjOdjbo3473sr8Ew5t1bITSbcIh3n7tSaDg==}
+  /@eslint-sets/eslint-config-ts@5.4.0(@babel/core@7.22.1)(eslint@8.42.0)(prettier@2.8.8)(typescript@5.1.3):
+    resolution: {integrity: sha512-Tr6h9DjS1I1G5j0STdwVyIDQJ7H9U0a8zvs6laX3IFZaJ/CKKdRnJW+RaMJzu1rw9CxE0pBnNUnDkMKWANSTrA==}
     peerDependencies:
       eslint: '>=7.4.0 || ^8.0.0'
       prettier: '>=2.0.0'
@@ -1493,7 +1493,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@eslint-sets/eslint-config-basic': 5.3.0(@babel/core@7.22.1)(@typescript-eslint/parser@5.60.0)(eslint@8.42.0)(prettier@2.8.8)(typescript@5.1.3)
+      '@eslint-sets/eslint-config-basic': 5.4.0(@babel/core@7.22.1)(@typescript-eslint/parser@5.60.0)(eslint@8.42.0)(prettier@2.8.8)(typescript@5.1.3)
       '@typescript-eslint/eslint-plugin': 5.60.0(@typescript-eslint/parser@5.60.0)(eslint@8.42.0)(typescript@5.1.3)
       '@typescript-eslint/parser': 5.60.0(eslint@8.42.0)(typescript@5.1.3)
       eslint: 8.42.0
@@ -2497,7 +2497,7 @@ packages:
     resolution: {integrity: sha512-ba51uMqDtfLQ5+xHtwlO84vkdjrqNzOnqrnwbMHMRY8Tqeme8C2Q8Fc7LajfGR+e3/4LoYiWXUM6BpIIbHJ4hQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0 || >= 8.0.0
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.42.0)
       '@types/json-schema': 7.0.12
