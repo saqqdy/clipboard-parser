@@ -1,30 +1,21 @@
 module.exports = {
-    presets: [
-        [
-            '@babel/env',
-            {
-                loose: true,
-                modules: 'auto',
-                useBuiltIns: 'usage',
-                corejs: 3
-                // exclude: ['es.promise', 'es.promise.finally']
-            }
-        ],
-        '@babel/typescript'
-    ],
-    plugins: [
-        [
-            '@babel/plugin-proposal-decorators',
-            {
-                legacy: true
-            }
-        ],
-        [
-            '@babel/plugin-proposal-class-properties',
-            {
-                loose: true
-            }
-        ]
-        // '@babel/plugin-transform-runtime'
-    ]
+	presets: [
+		[
+			'@babel/env',
+			{
+				targets: {
+					node: '12.20',
+					browsers: [
+						'> 1%',
+						'last 2 versions',
+						'not ie < 11',
+						'not ie_mob < 11',
+						'not op_mini all'
+					]
+				},
+				exclude: ['transform-regenerator']
+			}
+		],
+		'@babel/typescript'
+	]
 }

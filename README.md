@@ -1,70 +1,63 @@
+<div style="text-align: center;" align="center">
+
 # clipboard-parser
 
 支持解析@RequestParam/@ApiModelProperty 接口定义代码、Word、Excel 以及其他表格类数据
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
-[![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
-[![David deps][david-image]][david-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
 [![gzip][gzip-image]][gzip-url]
 [![License][license-image]][license-url]
 
 [![Sonar][sonar-image]][sonar-url]
 
-[npm-image]: https://img.shields.io/npm/v/clipboard-parser.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/clipboard-parser
-[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
-[codacy-url]: https://www.codacy.com/gh/saqqdy/clipboard-parser/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/clipboard-parser&utm_campaign=Badge_Grade
-[travis-image]: https://travis-ci.com/saqqdy/clipboard-parser.svg?branch=master
-[travis-url]: https://travis-ci.com/saqqdy/clipboard-parser
-[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/clipboard-parser.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/saqqdy/clipboard-parser?branch=master
-[david-image]: https://img.shields.io/david/saqqdy/clipboard-parser.svg?style=flat-square
-[david-url]: https://david-dm.org/saqqdy/clipboard-parser
-[snyk-image]: https://snyk.io/test/npm/clipboard-parser/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/clipboard-parser
-[download-image]: https://img.shields.io/npm/dm/clipboard-parser.svg?style=flat-square
-[download-url]: https://npmjs.org/package/clipboard-parser
-[gzip-image]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[gzip-url]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: LICENSE
-[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_clipboard-parser
-[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_clipboard-parser
+</div>
 
-## **完整文档请查阅： [API 完整文档](./docs/modules.md)**
+<div style="text-align: center; margin-bottom: 20px;" align="center">
 
-## 安装
+### **[Documentation](https://www.saqqdy.com/grace-speak)** • **[Change Log](./CHANGELOG.md)**
 
-```shell
-# 通过npm安装
-npm install -S clipboard-parser
+</div>
 
-# 或者通过yarn安装
-yarn add clipboard-parser
+## Installing
+
+```bash
+# use pnpm
+$ pnpm install grace-speak
+
+# use npm
+$ npm install grace-speak --save
+
+# use yarn
+$ yarn add grace-speak
 ```
 
-## 使用
+## Usage
 
 ```vue
-# vue页面
+<!-- demo.vue -->
 <template>
-    <textarea @paste="handlePaste"></textarea>
+  <textarea @paste="handlePaste"></textarea>
 </template>
 <script>
 import clipboardParser from 'clipboard-parser'
 export default {
-    methods: {
-        handlePaste(e) {
-            const result = clipboardParser(e)
-            // ...
-        }
+  methods: {
+    handlePaste(e) {
+      const result = clipboardParser(e)
+      // ...
     }
+  }
 }
 </script>
+```
+
+Using unpkg CDN:
+
+```html
+<script src="https://unpkg.com/grace-speak@3.0.0/dist/index.global.prod.js"></script>
 ```
 
 ## 示例
@@ -86,20 +79,20 @@ export default {
 
 ```json
 [
-    {
-        "type": "String",
-        "required": true,
-        "name": "rowCount",
-        "defaultValue": 10,
-        "description": "每页容量大小"
-    },
-    {
-        "type": "String",
-        "required": true,
-        "name": "current",
-        "defaultValue": 1,
-        "description": "开始页"
-    }
+  {
+    "type": "String",
+    "required": true,
+    "name": "rowCount",
+    "defaultValue": 10,
+    "description": "每页容量大小"
+  },
+  {
+    "type": "String",
+    "required": true,
+    "name": "current",
+    "defaultValue": 1,
+    "description": "开始页"
+  }
 ]
 ```
 
@@ -118,20 +111,20 @@ export default {
 
 ```json
 [
-    {
-        "required": true,
-        "type": "String",
-        "description": "id主键",
-        "defaultValue": "",
-        "name": "id"
-    },
-    {
-        "required": true,
-        "type": "String",
-        "description": "名称",
-        "defaultValue": "",
-        "name": "name"
-    }
+  {
+    "required": true,
+    "type": "String",
+    "description": "id主键",
+    "defaultValue": "",
+    "name": "id"
+  },
+  {
+    "required": true,
+    "type": "String",
+    "description": "名称",
+    "defaultValue": "",
+    "name": "name"
+  }
 ]
 ```
 
@@ -148,19 +141,42 @@ export default {
 
 ```json
 [
-    {
-        "name": "type",
-        "type": "String",
-        "required": false,
-        "defaultValue": "",
-        "description": "分支类型"
-    },
-    {
-        "name": "name",
-        "type": "String",
-        "required": false,
-        "defaultValue": "",
-        "description": "分支名称"
-    }
+  {
+    "name": "type",
+    "type": "String",
+    "required": false,
+    "defaultValue": "",
+    "description": "分支类型"
+  },
+  {
+    "name": "name",
+    "type": "String",
+    "required": false,
+    "defaultValue": "",
+    "description": "分支名称"
+  }
 ]
 ```
+
+## Support & Issues
+
+Please open an issue [here](https://github.com/saqqdy/grace-speak/issues).
+
+## License
+
+[MIT](LICENSE)
+
+[npm-image]: https://img.shields.io/npm/v/clipboard-parser.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/clipboard-parser
+[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
+[codacy-url]: https://www.codacy.com/gh/saqqdy/clipboard-parser/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/clipboard-parser&utm_campaign=Badge_Grade
+[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/clipboard-parser.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/saqqdy/clipboard-parser?branch=master
+[download-image]: https://img.shields.io/npm/dm/clipboard-parser.svg?style=flat-square
+[download-url]: https://npmjs.org/package/clipboard-parser
+[gzip-image]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[gzip-url]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: LICENSE
+[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_clipboard-parser
+[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_clipboard-parser
