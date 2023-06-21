@@ -1,0 +1,270 @@
+{
+	"id": 0,
+	"name": "index.md",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "ClipboardParserOptionsType",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "type",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 52,
+							"character": 1,
+							"url": "https://github.com/saqqdy/clipboard-parser/blob/3bb788e/src/index.ts#L52"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": 2
+							},
+							{
+								"type": "literal",
+								"value": 1
+							},
+							{
+								"type": "literal",
+								"value": -1
+							}
+						]
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 51,
+					"character": 17,
+					"url": "https://github.com/saqqdy/clipboard-parser/blob/3bb788e/src/index.ts#L51"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "default",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 96,
+					"character": 9,
+					"url": "https://github.com/saqqdy/clipboard-parser/blob/3bb788e/src/index.ts#L96"
+				}
+			],
+			"signatures": [
+				{
+					"id": 4,
+					"name": "default",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Parsing clipboard data"
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@example",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Use in vue projects\n"
+									},
+									{
+										"kind": "code",
+										"text": "```vue\n// demo.vue\n<template>\n    <textarea @paste=\"handlePaste\"></textarea>\n</template>\n\n<script>\nimport clipboardParser from 'clipboard-parser'\n\nexport default {\n    methods: {\n        handlePaste(e) {\n            const result = clipboardParser(e)\n            // ...\n        }\n    }\n}\n</script>\n```"
+									}
+								]
+							},
+							{
+								"tag": "@example",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Use in html page\n"
+									},
+									{
+										"kind": "code",
+										"text": "```html\n<body>\n    <textarea onpaste=\"handlePaste\"></textarea>\n</body>\n<script src=\"https://unpkg.com/clipboard-parser@3.0.0/dist/index.global.prod.js\"></script>\n<script>\nfunction handlePaste(event) {\n    const data = clipboardParser(event)\n}\n</script>\n```"
+									}
+								]
+							},
+							{
+								"tag": "@returns",
+								"content": [
+									{
+										"kind": "text",
+										"text": "array"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 96,
+							"character": 0,
+							"url": "https://github.com/saqqdy/clipboard-parser/blob/3bb788e/src/index.ts#L96"
+						}
+					],
+					"parameters": [
+						{
+							"id": 5,
+							"name": "event",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The paste event of textarea or input"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/typescript@5.1.3/node_modules/typescript/lib/lib.dom.d.ts",
+									"qualifiedName": "ClipboardEvent"
+								},
+								"name": "ClipboardEvent",
+								"package": "typescript"
+							}
+						},
+						{
+							"id": 6,
+							"name": "options",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "clipboard parser options"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"target": 1,
+								"name": "ClipboardParserOptionsType",
+								"package": "clipboard-parser"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Interfaces",
+			"children": [
+				1
+			]
+		},
+		{
+			"title": "Functions",
+			"children": [
+				3
+			]
+		}
+	],
+	"packageName": "clipboard-parser",
+	"packageVersion": "3.0.0",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "<div style=\"text-align: center;\" align=\"center\">\n\n# clipboard-parser\n\nA tool to read the clipboard and parse out the table data. Support for parsing @RequestParam/@ApiModelProperty interfaces to define code, Word, Excel and other form-like data\n\n[![NPM version][npm-image]][npm-url]\n[![Codacy Badge][codacy-image]][codacy-url]\n[![Test coverage][codecov-image]][codecov-url]\n[![npm download][download-image]][download-url]\n[![gzip][gzip-image]][gzip-url]\n[![License][license-image]][license-url]\n\n[![Sonar][sonar-image]][sonar-url]\n\n</div>\n\n<div style=\"text-align: center; margin-bottom: 20px;\" align=\"center\">\n\n### **[Documentation](https://www.saqqdy.com/clipboard-parser)** • **[Change Log](./CHANGELOG.md)**\n\n</div>\n\n## Installing\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\n# use pnpm\n$ pnpm install clipboard-parser\n\n# use npm\n$ npm install clipboard-parser --save\n\n# use yarn\n$ yarn add clipboard-parser\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Usage\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```vue\n<!-- demo.vue -->\n<template>\n  <textarea @paste=\"handlePaste\"></textarea>\n</template>\n\n<script>\nimport clipboardParser from 'clipboard-parser'\n\nexport default {\n  methods: {\n    handlePaste(e) {\n      const result = clipboardParser(e)\n      // ...\n    }\n  }\n}\n</script>\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\nUsing unpkg CDN:\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```html\n<body>\n  <textarea onpaste=\"handlePaste\"></textarea>\n</body>\n<script src=\"https://unpkg.com/clipboard-parser@3.0.0/dist/index.global.prod.js\"></script>\n<script>\n  function handlePaste(event) {\n    const data = clipboardParser(event)\n  }\n</script>\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Demos\n\n### 1. Parsing JAVA code containing the interface definition of"
+		}
+	],
+	"symbolIdMap": {
+		"0": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "ClipboardParserOptionsType"
+		},
+		"2": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "ClipboardParserOptionsType.type"
+		},
+		"3": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "clipboardParser"
+		},
+		"4": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "clipboardParser"
+		},
+		"5": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "event"
+		},
+		"6": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "options"
+		}
+	}
+}
