@@ -26,12 +26,12 @@ function createEntries(array: any[]) {
 			const done = array.length <= ++i
 			return {
 				done,
-				value: done ? void 0 : array[i]
+				value: done ? undefined : array[i]
 			}
 		}
 	}
 }
-const dataTypaMap = {
+const dataTypeMap = {
 	string: 'String',
 	char: 'String',
 	int: 'Number',
@@ -53,16 +53,18 @@ export interface ClipboardParserOptionsType {
 }
 
 /**
- * 解析剪贴板数据
+ * Parsing clipboard data
  *
- * @example 在vue页面组件里面使用
+ * @example Use in vue projects
  * ```vue
- * // vue页面
+ * // demo.vue
  * <template>
- *     </template><textarea @paste="handlePaste"></textarea>
+ *     <textarea @paste="handlePaste"></textarea>
  * </template>
+ *
  * <script>
  * import clipboardParser from 'clipboard-parser'
+ *
  * export default {
  *     methods: {
  *         handlePaste(e) {
@@ -73,25 +75,39 @@ export interface ClipboardParserOptionsType {
  * }
  * </script>
  * ```
- * @param event - 事件对象
- * @param options - 配置项
- * @returns rows数据
+ *
+ * @example Use in html page
+ * ```html
+ * <body>
+ *     <textarea onpaste="handlePaste"></textarea>
+ * </body>
+ * <script src="https://unpkg.com/clipboard-parser@3.0.0/dist/index.global.prod.js"></script>
+ * <script>
+ * function handlePaste(event) {
+ *     const data = clipboardParser(event)
+ * }
+ * </script>
+ * ```
+ *
+ * @param event - The paste event of textarea or input
+ * @param options - clipboard parser options
+ * @returns array
  */
 function clipboardParser(event: ClipboardEvent, options: ClipboardParserOptionsType) {
-	// 读取类型，默认自动识别 0=auto 1=requestParam 2=pathVariable
+	// Read type, automatic recognition by default 0=auto 1=requestParam 2=pathVariable
 	const clipboardData = (window as any).clipboardData || event.clipboardData
-	let text: string = clipboardData
-			.getData('Text')
-			.replace(/\r\n/g, '\n')
-			.replace(/\r/g, '\n')
-			.replace(/[\n\r]+$/, ''),
-		isRequestParam: boolean = text.includes('@RequestParam'),
-		isApiModel: boolean = text.includes('@ApiModelProperty') || text.includes('private '),
-		notTableData: boolean = !text.includes('\t') || isRequestParam,
+	const text: string = clipboardData
+		.getData('Text')
+		.replace(/\r\n/g, '\n')
+		.replace(/\r/g, '\n')
+		.replace(/[\n\r]+$/, '')
+	const isRequestParam: boolean = text.includes('@RequestParam')
+	const isApiModel: boolean = text.includes('@ApiModelProperty') || text.includes('private ')
+	const params: any[] = []
+	let notTableData: boolean = !text.includes('\t') || isRequestParam,
 		reg: RegExp,
 		len: number,
-		rows: any = text.split('\n'),
-		params: any[] = []
+		rows: any = text.split('\n')
 	const { type = isRequestParam ? 1 : isApiModel ? 2 : -1 } = options
 	if (type === 1) {
 		reg = new RegExp(
@@ -116,14 +132,14 @@ function clipboardParser(event: ClipboardEvent, options: ClipboardParserOptionsT
 			'g'
 		)
 	} else {
-		reg = new RegExp('.+')
+		reg = /.+/
 	}
 	rows = rows.map((txt: string, i: number): any[] => {
 		let arr = txt ? txt.split('\t') : []
 		if (i === 0) {
 			len = +arr.length
 		} else if (len === 0 || (i !== rows.length - 1 && len !== arr.length)) {
-			// 第一行和最后一行不校验
+			// The first and last lines are not verified
 			notTableData = true
 		}
 		arr = arr.map(el => el.replace(/\s+/g, ' '))
@@ -151,7 +167,7 @@ function clipboardParser(event: ClipboardEvent, options: ClipboardParserOptionsT
 				param1 = fromEntries(pm1)
 			}
 			if (d === undefined) {
-				console.info('没有ApiParam定义')
+				console.info('no ApiParam')
 			} else if (!d.includes('=') && !d.includes(',')) {
 				param2 = { value: d.replace(/^"([\s\S]*)"$/, '$1') }
 			} else {
@@ -167,7 +183,7 @@ function clipboardParser(event: ClipboardEvent, options: ClipboardParserOptionsT
 				param2 = fromEntries(pm2)
 			}
 			params.push({
-				type: dataTypaMap[e.toLowerCase()] || 'String',
+				type: dataTypeMap[e.toLowerCase()] || 'String',
 				required: typeof param1.required !== 'undefined' ? param1.required : true,
 				name: param1.value || f,
 				defaultValue: param2.defaultValue || '',
@@ -179,7 +195,7 @@ function clipboardParser(event: ClipboardEvent, options: ClipboardParserOptionsT
 		rows.replace(reg, (a: string, b: string, c: string, d: string, e: string, f: string) => {
 			let param1: any = {}
 			if (c === undefined) {
-				console.info('没有ApiParam定义')
+				console.info('no ApiParam')
 			} else if (!c.includes('=') && !c.includes(',')) {
 				param1 = { value: c.replace(/^"([\s\S]*)"$/, '$1') }
 			} else {
@@ -196,7 +212,7 @@ function clipboardParser(event: ClipboardEvent, options: ClipboardParserOptionsT
 			}
 			params.push({
 				required: true,
-				type: e ? dataTypaMap[e.toLowerCase()] : 'String',
+				type: e ? dataTypeMap[e.toLowerCase()] : 'String',
 				description: param1.value || '',
 				defaultValue: '',
 				name: f

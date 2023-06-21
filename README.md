@@ -2,7 +2,7 @@
 
 # clipboard-parser
 
-支持解析@RequestParam/@ApiModelProperty 接口定义代码、Word、Excel 以及其他表格类数据
+A tool to read the clipboard and parse out the table data. Support for parsing @RequestParam/@ApiModelProperty interfaces to define code, Word, Excel and other form-like data
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
@@ -17,7 +17,7 @@
 
 <div style="text-align: center; margin-bottom: 20px;" align="center">
 
-### **[Documentation](https://www.saqqdy.com/grace-speak)** • **[Change Log](./CHANGELOG.md)**
+### **[Documentation](https://www.saqqdy.com/clipboard-parser)** • **[Change Log](./CHANGELOG.md)**
 
 </div>
 
@@ -25,13 +25,13 @@
 
 ```bash
 # use pnpm
-$ pnpm install grace-speak
+$ pnpm install clipboard-parser
 
 # use npm
-$ npm install grace-speak --save
+$ npm install clipboard-parser --save
 
 # use yarn
-$ yarn add grace-speak
+$ yarn add clipboard-parser
 ```
 
 ## Usage
@@ -41,8 +41,10 @@ $ yarn add grace-speak
 <template>
   <textarea @paste="handlePaste"></textarea>
 </template>
+
 <script>
 import clipboardParser from 'clipboard-parser'
+
 export default {
   methods: {
     handlePaste(e) {
@@ -57,25 +59,33 @@ export default {
 Using unpkg CDN:
 
 ```html
-<script src="https://unpkg.com/grace-speak@3.0.0/dist/index.global.prod.js"></script>
+<body>
+  <textarea onpaste="handlePaste"></textarea>
+</body>
+<script src="https://unpkg.com/clipboard-parser@3.0.0/dist/index.global.prod.js"></script>
+<script>
+  function handlePaste(event) {
+    const data = clipboardParser(event)
+  }
+</script>
 ```
 
-## 示例
+## Demos
 
-### 1. 解析@RequestParam 格式代码
+### 1. Parsing JAVA code containing the interface definition of @RequestParam
 
-输入
+input
 
 ```java
 @RequestParam("rowCount")
-@ApiParam(required = false, name = "rowCount", value = "每页容量大小",defaultValue = 10)
+@ApiParam(required = false, name = "rowCount", value = "page size",defaultValue = 10)
     String rowCount,
 @RequestParam(value = "current")
-@ApiParam(required = false, name = "current", value = "开始页",defaultValue = 1)
+@ApiParam(required = false, name = "current", value = "start page",defaultValue = 1)
     String current,
 ```
 
-返回结果
+output
 
 ```json
 [
@@ -84,60 +94,60 @@ Using unpkg CDN:
     "required": true,
     "name": "rowCount",
     "defaultValue": 10,
-    "description": "每页容量大小"
+    "description": "page size"
   },
   {
     "type": "String",
     "required": true,
     "name": "current",
     "defaultValue": 1,
-    "description": "开始页"
+    "description": "start page"
   }
 ]
 ```
 
-### 2. 解析@ApiModelProperty 格式代码
+### 2. Parsing JAVA code containing the interface definition of @ApiModelProperty
 
-输入
+input
 
 ```java
-@ApiModelProperty(value = "id主键", required = true)
+@ApiModelProperty(value = "id key", required = true)
     private String id;
-@ApiModelProperty(value = "名称")
+@ApiModelProperty(value = "name")
     private String name;
 ```
 
-返回结果
+output
 
 ```json
 [
   {
     "required": true,
     "type": "String",
-    "description": "id主键",
+    "description": "id key",
     "defaultValue": "",
     "name": "id"
   },
   {
     "required": true,
     "type": "String",
-    "description": "名称",
+    "description": "name",
     "defaultValue": "",
     "name": "name"
   }
 ]
 ```
 
-### 3. 解析 word/excel/网页 table 等表格类数据
+### 3. Parse word/excel/web-page-table and other form-like data
 
-输入
+input
 
-| 参数 | 说明     | 类型   | 可选值                 | 必填  | 默认         |
-| ---- | -------- | ------ | ---------------------- | ----- | ------------ |
-| type | 分支类型 | String | feature/bugfix/support | false | 当前分支类型 |
-| name | 分支名称 | String | -                      | false | 当前分支名称 |
+| Parameters | Description | Type   | Optional               | Required | Default             |
+| ---------- | ----------- | ------ | ---------------------- | -------- | ------------------- |
+| type       | branch type | String | feature/bugfix/support | false    | current branch type |
+| name       | branch name | String | -                      | false    | current branch name |
 
-返回结果
+output
 
 ```json
 [
@@ -146,21 +156,21 @@ Using unpkg CDN:
     "type": "String",
     "required": false,
     "defaultValue": "",
-    "description": "分支类型"
+    "description": "branch type"
   },
   {
     "name": "name",
     "type": "String",
     "required": false,
     "defaultValue": "",
-    "description": "分支名称"
+    "description": "branch name"
   }
 ]
 ```
 
 ## Support & Issues
 
-Please open an issue [here](https://github.com/saqqdy/grace-speak/issues).
+Please open an issue [here](https://github.com/saqqdy/clipboard-parser/issues).
 
 ## License
 
@@ -176,7 +186,7 @@ Please open an issue [here](https://github.com/saqqdy/grace-speak/issues).
 [download-url]: https://npmjs.org/package/clipboard-parser
 [gzip-image]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
 [gzip-url]: http://img.badgesize.io/https://unpkg.com/clipboard-parser/lib/index.js?compression=gzip&label=gzip%20size:%20JS
-[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
 [sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_clipboard-parser
 [sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_clipboard-parser
