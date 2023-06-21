@@ -1,7 +1,7 @@
 {
 	"name": "clipboard-parser",
 	"description": "A tool to read the clipboard and parse out the table data",
-	"version": "3.0.0-beta.1",
+	"version": "3.0.0",
 	"packageManager": "pnpm@8.6.1",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm-bundler.js",
