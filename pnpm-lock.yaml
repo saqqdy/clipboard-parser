@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -24,7 +24,7 @@ devDependencies:
     version: 5.4.0(@babel/core@7.22.5)(eslint@8.43.0)(prettier@2.8.8)(typescript@5.1.3)
   '@microsoft/api-extractor':
     specifier: ^7.36.0
-    version: 7.36.0(@types/node@20.3.1)
+    version: 7.36.1(@types/node@20.3.1)
   '@rollup/plugin-alias':
     specifier: ^5.0.0
     version: 5.0.0(rollup@3.25.1)
@@ -1443,7 +1443,7 @@ packages:
   /@eslint-sets/eslint-config-basic@5.4.0(@babel/core@7.22.5)(@typescript-eslint/parser@5.60.0)(eslint@8.43.0)(prettier@2.8.8)(typescript@5.1.3):
     resolution: {integrity: sha512-fmlCgPywhTZ+9q90ZXsOcIrFIODF0oYp0BHjUpQ/avJ/AM2Ivb8ZMbOCsLCh9+DdzQuDGlA14EleU+CuAsinyQ==}
     peerDependencies:
-      eslint: '>=7.4.0 || >= 8.0.0 || ^8.0.0'
+      eslint: '>=7.4.0 || ^8.0.0'
       prettier: '>=2.0.0'
       typescript: '*'
     peerDependenciesMeta:
@@ -1827,24 +1827,24 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@microsoft/api-extractor-model@7.27.3(@types/node@20.3.1):
-    resolution: {integrity: sha512-fSFvw7otYHduOkyshjTbapKKgwF8bgquVHvgF8VgeKtMYvqXkoaj7W6VcM7PNY7E2bbblhUgC4XNdqZLD4SJGw==}
+  /@microsoft/api-extractor-model@7.27.4(@types/node@20.3.1):
+    resolution: {integrity: sha512-HjqQFmuGPOS20rtnu+9Jj0QrqZyR59E+piUWXPMZTTn4jaZI+4UmsHSf3Id8vyueAhOBH2cgwBuRTE5R+MfSMw==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.4(@types/node@20.3.1)
+      '@rushstack/node-core-library': 3.59.5(@types/node@20.3.1)
     transitivePeerDependencies:
       - '@types/node'
     dev: true
 
-  /@microsoft/api-extractor@7.36.0(@types/node@20.3.1):
-    resolution: {integrity: sha512-P+kYgJFDXIr+UNzhRMhlpM/dderi6ab4lxn35vdhfAIMPtGCSXIJxrrtpTOQmQW8CZtmoZX06LYoUsKCc1zjow==}
+  /@microsoft/api-extractor@7.36.1(@types/node@20.3.1):
+    resolution: {integrity: sha512-2SPp1jq6wDY5IOsRLUv/4FxngslctBZJlztAJ3uWpCAwqKQG7ESdL3DhEza+StbYLtBQmu1Pk6q1Vkhl7qD/bg==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.27.3(@types/node@20.3.1)
+      '@microsoft/api-extractor-model': 7.27.4(@types/node@20.3.1)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.4(@types/node@20.3.1)
+      '@rushstack/node-core-library': 3.59.5(@types/node@20.3.1)
       '@rushstack/rig-package': 0.4.0
       '@rushstack/ts-command-line': 4.15.1
       colors: 1.2.5
@@ -2150,8 +2150,8 @@ packages:
       rollup: 3.25.1
     dev: true
 
-  /@rushstack/node-core-library@3.59.4(@types/node@20.3.1):
-    resolution: {integrity: sha512-YAKJDC6Mz/KA1D7bvB88WaRX3knt/ZuLzkRu5G9QADGSjLtvTWzCNCytRF2PCSaaHOZaZsWul4F1KQdgFgUDqA==}
+  /@rushstack/node-core-library@3.59.5(@types/node@20.3.1):
+    resolution: {integrity: sha512-1IpV7LufrI1EoVO8hYsb3t6L8L+yp40Sa0OaOV2CIu1zx4e6ZeVNaVIEXFgMXBKdGXkAh21MnCaIzlDNpG6ZQw==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
@@ -2492,7 +2492,7 @@ packages:
     resolution: {integrity: sha512-ba51uMqDtfLQ5+xHtwlO84vkdjrqNzOnqrnwbMHMRY8Tqeme8C2Q8Fc7LajfGR+e3/4LoYiWXUM6BpIIbHJ4hQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0 || >= 8.0.0
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.43.0)
       '@types/json-schema': 7.0.12
