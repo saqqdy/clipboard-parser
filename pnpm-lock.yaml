@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -54,7 +54,7 @@ devDependencies:
     version: 5.2.0
   core-js:
     specifier: ^3.31.0
-    version: 3.31.0
+    version: 3.31.1
   coveralls:
     specifier: ^3.1.1
     version: 3.1.1
@@ -72,7 +72,7 @@ devDependencies:
     version: 29.5.0(@types/node@20.3.1)
   load-yml:
     specifier: ^1.3.0
-    version: 1.3.0(core-js@3.31.0)
+    version: 1.3.0(core-js@3.31.1)
   npm-run-all:
     specifier: ^4.1.5
     version: 4.1.5
@@ -87,7 +87,7 @@ devDependencies:
     version: 3.0.0(debug@4.3.4)(js-cool@4.7.0)
   rm-all:
     specifier: ^1.0.0
-    version: 1.0.0(core-js@3.31.0)
+    version: 1.0.0(core-js@3.31.1)
   rollup:
     specifier: ^3.25.1
     version: 3.25.1
@@ -1443,7 +1443,7 @@ packages:
   /@eslint-sets/eslint-config-basic@5.4.0(@babel/core@7.22.5)(@typescript-eslint/parser@5.60.0)(eslint@8.43.0)(prettier@2.8.8)(typescript@5.1.3):
     resolution: {integrity: sha512-fmlCgPywhTZ+9q90ZXsOcIrFIODF0oYp0BHjUpQ/avJ/AM2Ivb8ZMbOCsLCh9+DdzQuDGlA14EleU+CuAsinyQ==}
     peerDependencies:
-      eslint: '>=7.4.0 || >= 8.0.0 || ^8.0.0'
+      eslint: '>=7.4.0 || ^8.0.0'
       prettier: '>=2.0.0'
       typescript: '*'
     peerDependenciesMeta:
@@ -1900,13 +1900,13 @@ packages:
       find-up: 5.0.0
     dev: true
 
-  /@node-kit/pnpm-workspace-info@2.5.1(core-js@3.31.0):
+  /@node-kit/pnpm-workspace-info@2.5.1(core-js@3.31.1):
     resolution: {integrity: sha512-uJfJgNvHNt+fZJW/GeEONDN5SIIYR7DGB3GSzYzvYq6NMW46B/pjDmIHokeaI80VyLzwiJvV/K4RgF9IOe5cXA==}
     dependencies:
       '@node-kit/extra.path': 2.5.1
       '@node-kit/pnpm-workspace-root': 2.5.1
       fast-glob: 3.2.12
-      load-yml: 1.3.0(core-js@3.31.0)
+      load-yml: 1.3.0(core-js@3.31.1)
     transitivePeerDependencies:
       - core-js
     dev: true
@@ -2492,7 +2492,7 @@ packages:
     resolution: {integrity: sha512-ba51uMqDtfLQ5+xHtwlO84vkdjrqNzOnqrnwbMHMRY8Tqeme8C2Q8Fc7LajfGR+e3/4LoYiWXUM6BpIIbHJ4hQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0 || >= 8.0.0
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.43.0)
       '@types/json-schema': 7.0.12
@@ -3186,8 +3186,8 @@ packages:
       browserslist: 4.21.9
     dev: true
 
-  /core-js@3.31.0:
-    resolution: {integrity: sha512-NIp2TQSGfR6ba5aalZD+ZQ1fSxGhDo/s1w0nx3RYzf2pnJxt7YynxFlFScP6eV7+GZsKO95NSjGxyJsU3DZgeQ==}
+  /core-js@3.31.1:
+    resolution: {integrity: sha512-2sKLtfq1eFST7l7v62zaqXacPc7uG8ZAya8ogijLhTtaKNcpzpB4TMoTw2Si+8GYKRwFPMMtUT0263QFWFfqyQ==}
     requiresBuild: true
     dev: true
 
@@ -5482,7 +5482,7 @@ packages:
       skip-regex: 1.0.2
     dev: true
 
-  /js-cool@2.8.0(core-js@3.31.0):
+  /js-cool@2.8.0(core-js@3.31.1):
     resolution: {integrity: sha512-k2oWpZfYgqXaciJaG/aAKg2PoNyiZ37SeO0t6yVtlolY50Lwv8WnqmSekSAHTrXvxtLzN4VNj8eGhQi9lG6abQ==}
     peerDependencies:
       core-js: '>=3.0.0'
@@ -5491,7 +5491,7 @@ packages:
       tslib:
         optional: true
     dependencies:
-      core-js: 3.31.0
+      core-js: 3.31.1
     dev: true
 
   /js-cool@4.7.0:
@@ -5674,7 +5674,7 @@ packages:
       mount-script: 1.2.0
       mount-style: 1.2.0
 
-  /load-yml@1.3.0(core-js@3.31.0):
+  /load-yml@1.3.0(core-js@3.31.1):
     resolution: {integrity: sha512-LkbCmVZULVsMADpXe3WIvM8GfsTDDbbnItNaEJIhoJeyab359GyQ5dM4esqyE+XH60Yo8xB5N2SeEk174RY6Rg==}
     engines: {node: '>=12.20'}
     peerDependencies:
@@ -5684,7 +5684,7 @@ packages:
         optional: true
     dependencies:
       '@types/js-yaml': 4.0.5
-      core-js: 3.31.0
+      core-js: 3.31.1
       js-yaml: 4.1.0
     dev: true
 
@@ -6490,10 +6490,10 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pm-info@2.5.1(core-js@3.31.0):
+  /pm-info@2.5.1(core-js@3.31.1):
     resolution: {integrity: sha512-cCK0S13Pk3z6vG1G0XyoqWPVg6SLEi7LnNRVlDep+JM50bsUD49rtEmhcCWKqTEEJD0QHYNlWNpb4W4s+Vi2tA==}
     dependencies:
-      load-yml: 1.3.0(core-js@3.31.0)
+      load-yml: 1.3.0(core-js@3.31.1)
     transitivePeerDependencies:
       - core-js
     dev: true
@@ -6718,15 +6718,15 @@ packages:
       '@node-kit/extra.fs': 2.5.1
       commander: 10.0.1
       consola: 3.1.0
-      core-js: 3.31.0
+      core-js: 3.31.1
       cosmiconfig: 8.2.0
       debug: 4.3.4
       global-modules: 2.0.0
       js-cool: 4.7.0
       monorepo-root: 2.5.1
       ora: 6.3.1
-      what-pm: 2.5.1(core-js@3.31.0)
-      workspace-projects: 2.5.1(core-js@3.31.0)
+      what-pm: 2.5.1(core-js@3.31.1)
+      workspace-projects: 2.5.1(core-js@3.31.1)
     dev: true
 
   /request@2.88.2:
@@ -6824,7 +6824,7 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rm-all@1.0.0(core-js@3.31.0):
+  /rm-all@1.0.0(core-js@3.31.1):
     resolution: {integrity: sha512-no+Lt1FH9EMV2vXz5qUMB9n9JnyUn1QQsaTk4aT2Gkw13HufCGbecTIsDcUy+n7NnuZbmQbPlerpIcXU3R0hlg==}
     engines: {node: '>=12.20'}
     hasBin: true
@@ -6835,8 +6835,8 @@ packages:
       chalk: 4.1.2
       commander: 10.0.1
       consola: 2.15.3
-      core-js: 3.31.0
-      js-cool: 2.8.0(core-js@3.31.0)
+      core-js: 3.31.1
+      js-cool: 2.8.0(core-js@3.31.1)
     transitivePeerDependencies:
       - tslib
     dev: true
@@ -7747,11 +7747,11 @@ packages:
     hasBin: true
     dev: true
 
-  /what-pm@2.5.1(core-js@3.31.0):
+  /what-pm@2.5.1(core-js@3.31.1):
     resolution: {integrity: sha512-5CLrxTyIKk3o2Tshv1BMAe84NjJbucr/uio8fX4Jr838/enF/aQEpAUWLcj5WSbA3dOJWWsoySLQPCK2SPCeSA==}
     dependencies:
       find-up: 5.0.0
-      pm-info: 2.5.1(core-js@3.31.0)
+      pm-info: 2.5.1(core-js@3.31.1)
       workspace-root: 2.5.1
     transitivePeerDependencies:
       - core-js
@@ -7824,11 +7824,11 @@ packages:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
     dev: true
 
-  /workspace-projects@2.5.1(core-js@3.31.0):
+  /workspace-projects@2.5.1(core-js@3.31.1):
     resolution: {integrity: sha512-bUnx92d1MrnukbK+bK4NZ04+4VMC9jCOfvkB4D67KwzvxVmaBCh0zul0jQ6eghxGxMibxEtdIVQwYQuF0pSu3Q==}
     dependencies:
       '@node-kit/lerna-workspace-info': 2.5.1
-      '@node-kit/pnpm-workspace-info': 2.5.1(core-js@3.31.0)
+      '@node-kit/pnpm-workspace-info': 2.5.1(core-js@3.31.1)
       '@node-kit/yarn-workspace-info': 2.5.1
     transitivePeerDependencies:
       - core-js
