@@ -15,4 +15,4 @@ updates:
       - dependency-name: typescript
         versions: [4.x]
       - dependency-name: '*'
-        update-types: ['version-update:semver-patch']
+        update-types: ['version-update:semver-minor']
