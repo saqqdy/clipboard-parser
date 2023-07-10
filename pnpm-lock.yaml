@@ -84,7 +84,7 @@ devDependencies:
     version: 1.4.0
   reinstaller:
     specifier: ^3.0.0
-    version: 3.0.0(debug@4.3.4)(js-cool@4.7.0)
+    version: 3.0.2(debug@4.3.4)(js-cool@4.7.0)
   rm-all:
     specifier: ^1.0.0
     version: 1.0.0(core-js@3.31.1)
@@ -6738,8 +6738,8 @@ packages:
       jsesc: 0.5.0
     dev: true
 
-  /reinstaller@3.0.0(debug@4.3.4)(js-cool@4.7.0):
-    resolution: {integrity: sha512-fsGop0ShDeunvGm3G08mtVOgjJQfg+tzXadGNX6LiSYLBmwAAziBQ+BxvEFSo6EtNlZLzGAGktjx6dmaRHOhfA==}
+  /reinstaller@3.0.2(debug@4.3.4)(js-cool@4.7.0):
+    resolution: {integrity: sha512-VLjzE9tQMghK53x1Ccx96AEdRRe+dKq5zsnSNFLf1d7QsLAaRV0yX3lU1djgIaPYNSjDOXBRXjt8Y/GFTrHt/A==}
     hasBin: true
     peerDependencies:
       debug: '>= 4'
