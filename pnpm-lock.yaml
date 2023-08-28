@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   js-cool:
-    specifier: ^4.7.0
-    version: 4.7.0
+    specifier: ^5.7.0
+    version: 5.7.0
 
 devDependencies:
   '@babel/core':
@@ -84,7 +84,7 @@ devDependencies:
     version: 1.4.0
   reinstaller:
     specifier: ^3.0.0
-    version: 3.0.0(debug@4.3.4)(js-cool@4.7.0)
+    version: 3.0.0(debug@4.3.4)(js-cool@5.7.0)
   rm-all:
     specifier: ^1.0.0
     version: 1.0.0(core-js@3.31.1)
@@ -1905,6 +1905,10 @@ packages:
     resolution: {integrity: sha512-3Yc1fUTs69MG/uZbJlLSI3JISMn2UV2rg+1D/vROUqZyh3l6iYHCs7GMp+M40ZD7yOdDbYjJcU1oTJhrc+dGKg==}
     hasBin: true
     dev: true
+
+  /@node-kit/extra.cp@3.2.0:
+    resolution: {integrity: sha512-8n27oOF0clO0VsqkhSo0PXTOG9YGYS25f8zsf9JKsMaT9IkZjPNCzgcNDQkIOE/e3r1u7c5j6ab6siWOON0keQ==}
+    hasBin: true
 
   /@node-kit/extra.fs@2.5.1:
     resolution: {integrity: sha512-cj0gMQ+yE4jNmCrtz1TEXYMX+zNOJEGxGy1YzG2IBek0ndKszIYRxyLbIz3URh1MSTMGT+f9Zxy3iARB8vVP9g==}
@@ -4818,6 +4822,10 @@ packages:
       side-channel: 1.0.4
     dev: true
 
+  /invert-kv@3.0.1:
+    resolution: {integrity: sha512-CYdFeFexxhv/Bcny+Q0BfOV+ltRlJcd4BBZBYFX/O0u4npJrgZtIcjokegtiSMAvlMTJ+Koq0GBCc//3bueQxw==}
+    engines: {node: '>=8'}
+
   /ip@2.0.0:
     resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
     dev: true
@@ -5534,6 +5542,20 @@ packages:
       mount-script: 1.2.0
       mount-style: 1.2.0
       use-downloads: 1.3.0
+    dev: true
+
+  /js-cool@5.7.0:
+    resolution: {integrity: sha512-KJfvn/NP2RZS/3lDofbpNyxajA6kihEhAs5Vt3PyQ38DHm5nOCbP46zeW+pcUb/97CFp2wActRKqWr5zNHsNLw==}
+    engines: {node: '>=12.20'}
+    dependencies:
+      load-source: 1.2.0
+      mount-css: 1.2.0
+      mount-image: 1.2.0
+      mount-script: 1.2.0
+      mount-style: 1.2.0
+      os-lang: 3.2.0
+      tslib: 2.6.2
+      use-downloads: 1.4.0
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -5663,6 +5685,12 @@ packages:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
     dev: true
+
+  /lcid@4.0.1:
+    resolution: {integrity: sha512-qI4sQt7g19ZWtaodPKBUvym/pen9/lZzqyl2qeItTFPwJptXllVhe3KI+mV9xmBa4cnZoik8m1obToxqFbVIZQ==}
+    engines: {node: '>=14.16'}
+    dependencies:
+      invert-kv: 3.0.1
 
   /lcov-parse@1.0.0:
     resolution: {integrity: sha512-aprLII/vPzuQvYZnDRU78Fns9I2Ag3gi4Ipga/hxnVMCZC8DnR2nI7XBqrPoywGfxqIx/DgarGvDJZAD3YBTgQ==}
@@ -6320,6 +6348,13 @@ packages:
       wcwidth: 1.0.1
     dev: true
 
+  /os-lang@3.2.0:
+    resolution: {integrity: sha512-/hMEpk0p6gE4BaK9ZufPktHYsws4Kft8nBwiWEdIJryigq6bZ4PkuKkWypvjFdAZRtHm20pZTSoZgBjKtT/HTw==}
+    hasBin: true
+    dependencies:
+      '@node-kit/extra.cp': 3.2.0
+      lcid: 4.0.1
+
   /p-limit@2.3.0:
     resolution: {integrity: sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==}
     engines: {node: '>=6'}
@@ -6738,7 +6773,7 @@ packages:
       jsesc: 0.5.0
     dev: true
 
-  /reinstaller@3.0.0(debug@4.3.4)(js-cool@4.7.0):
+  /reinstaller@3.0.0(debug@4.3.4)(js-cool@5.7.0):
     resolution: {integrity: sha512-fsGop0ShDeunvGm3G08mtVOgjJQfg+tzXadGNX6LiSYLBmwAAziBQ+BxvEFSo6EtNlZLzGAGktjx6dmaRHOhfA==}
     hasBin: true
     peerDependencies:
@@ -6752,7 +6787,7 @@ packages:
       cosmiconfig: 8.2.0
       debug: 4.3.4
       global-modules: 2.0.0
-      js-cool: 4.7.0
+      js-cool: 5.7.0
       monorepo-root: 2.5.1
       ora: 6.3.1
       what-pm: 2.5.1(core-js@3.31.1)
@@ -7473,6 +7508,9 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+
   /tsnd@1.1.0:
     resolution: {integrity: sha512-sc+Xm5uxwfMlYCjLkwP9i7+9uC4izAo8N/opmdzR+RHtE/XTEfUV8r5FI3oh6RdcMybNHD0DTGultnzrJfcirQ==}
     hasBin: true
@@ -7681,6 +7719,10 @@ packages:
 
   /use-downloads@1.3.0:
     resolution: {integrity: sha512-fFC1Sz6jCNUdQmCyJpQXEWKbTOsahtT2U1ItEOxGnXtaRSqbw98Sr+9rEPUHcxx90R20znHs5SopoNz3Pf3TjA==}
+    dev: true
+
+  /use-downloads@1.4.0:
+    resolution: {integrity: sha512-h2t2c7cKx7YCQcM7Am68EW5Wh24fjR6astbTCj3HA4ZYlsjPdybBfSS1ZP7Bw+taFAhMFCL+7zfVJMeTNrWlcQ==}
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
