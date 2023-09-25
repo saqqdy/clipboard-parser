@@ -47,7 +47,7 @@
 		"prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,yml,json,md}\""
 	},
 	"dependencies": {
-		"js-cool": "^4.7.0"
+		"js-cool": "^5.10.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.22.5",
